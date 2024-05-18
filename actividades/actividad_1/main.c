@@ -31,16 +31,17 @@ int main() {
     // Inicializacion del LCD
     lcd_init();
     // Inicializo ADC
-
+    adc_init();
     // Inicializo GPIO26 como entrada analogica
-
+    adc_gpio_init(26);
     // Selecciono canal analogico
-
+    adc_select_imput(0);
     while(true) {
         // Leer NTC
-        
+        uint16_t adc_value = adc_read();
+        FLOAT vx = (adc_value * 3.3)/4095;
         // Calculo temperatura
-        
+        float ( = / 1 / (4000/(log(rtnc/2000)+4000/298));
         // Limpio LCD
         lcd_clear();
         // Variable para el string
